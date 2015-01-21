@@ -4,7 +4,7 @@ Vanderbilt University Hand Washing is a comprehensive application created for th
 #2. Checkout, build, and run
 Install the latest version of XCode.
 
-Check out the code from: https://github.com/astonking/VUMCHandWashing
+Check out the code from: https://github.com/astonking/VUMCHandWashing/tree/dev
 
 You can test it using XCode's built in iOS simulator (top left drop down)
 
