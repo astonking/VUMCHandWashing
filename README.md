@@ -23,4 +23,4 @@ Location will allow you to choose you current location in the hospital. (This is
 Statistic will allow you to view stats on observation data. Drop down menus allow you to filter results based on: time, location (tentative), and observations.
 
 #3. Build cycles and associated milestones
-1/21 - Initial readme, prototype
+1/21 - Initial readme, [prototype](/Prototype 1.1.pdf)
