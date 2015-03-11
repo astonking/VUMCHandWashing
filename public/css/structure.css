@@ -151,7 +151,7 @@ body {
 	margin-right: 10px;
 }
 
-.box input[type=text],.box input[type=password],.txtField,.cjComboBox {
+.box input[type=text],.box input[type=email],.box input[type=password],.txtField,.cjComboBox {
 	border: 6px solid #F7F9FA;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -166,7 +166,7 @@ body {
 	width: 270px;
 }
 
-.box input[type=text]:focus,.box input[type=password]:focus,.txtField:focus,.cjComboBox:focus
+.box input[type=text]:focus,.box input[type=email],.box input[type=password]:focus,.txtField:focus,.cjComboBox:focus
 	{
 	border: 6px solid #f0f7fc;
 	-moz-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6

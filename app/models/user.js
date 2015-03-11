@@ -8,7 +8,8 @@ var userSchema = mongoose.Schema({
 	name	     	 : String,
 	pager      : String,
 	entries : String,
-	lookback : String
+	lookback : String,
+  lastloc : String
     }
 });
 

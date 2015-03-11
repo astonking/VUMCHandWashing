@@ -7,14 +7,18 @@ module.exports = function(app, passport,server) {
 	app.get('/', function(request, response) {
 		response.render('index.html');
 	});
+  app.get('/', auth, function(request, response) {
+		response.render('user.html');
+	});
 	app.get('/user', auth, function(request, response) {
 		response.render('user.html', {
 			user : request.user
 		});
 	});
 
-	app.get('/Location', function(request, response) {
+	app.get('/Location', auth, function(request, response) {
 		response.render('Location.html');
+			user : request.user
 	});
 	app.get('/image.png', function (req, res) {
     		res.sendfile(path.resolve('./uploads/image_'+req.user._id));
@@ -62,14 +66,7 @@ module.exports = function(app, passport,server) {
 
 
 		app.post('/edit',  function (req, res){
-				 var tempPath = req.files.file.path,
-        			targetPath = path.resolve('./uploads/'+req.files.file.originalFilename);
-    				if (path.extname(req.files.file.name).toLowerCase() === '.png') {
-        				fs.rename(tempPath, './uploads/image_'+req.user._id, function(err) {
-            					if (err) throw err;
-            				console.log("Upload completed!");
-        				});
-    				}
+				
  			 User.findOne({ 'user.email' :  req.body.email }, function(err, user) {
                 		if (err){ return done(err);}
                 		if (user)
@@ -212,7 +209,7 @@ app.get('/auth/google/callback',
 				successRedirect : '/about', 	
 				failureRedirect: '/login' }));
 
-*/
+
 var io = require('socket.io').listen(server);
 
 var usernames = {};
@@ -230,7 +227,7 @@ io.sockets.on('connection', function (socket) {
     io.sockets.emit('updateusers', usernames);
     socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
   });
-});
+});*/
 
 };
 function auth(req, res, next) {

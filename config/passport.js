@@ -1,7 +1,7 @@
 // local authentication
 // For more details go to https://github.com/jaredhanson/passport-local
 var LocalStrategy    = require('passport-local').Strategy;
-
+/*
 // Facebook authentication
 // For more details go to https://github.com/jaredhanson/passport-facebook
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -19,7 +19,7 @@ var TWITTER_CONSUMER_SECRET = "<Insert Your Secret Key Here>";
 var GOOGLE_CONSUMER_KEY = "<Insert Your Key Here>";
 var GOOGLE_CONSUMER_SECRET = "<Insert Your Secret Key Here>";
 var GoogleStrategy   = require('passport-google-oauth').OAuth2Strategy
-
+*/
 var User       = require('../app/models/user');
 
 module.exports = function(passport) {
@@ -105,7 +105,7 @@ module.exports = function(passport) {
 
 
     }));
-
+/*
 // Use the FacebookStrategy within Passport.
 // Strategies in Passport require a `verify` function, which accept
 // credentials (in this case, an accessToken, refreshToken, and Facebook
@@ -252,5 +252,5 @@ module.exports = function(passport) {
     			}
  
 ));
-
+*/
 };
