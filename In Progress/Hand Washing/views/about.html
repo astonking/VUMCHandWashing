@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+	<title>VUMC Hand Washing</title>
+
+<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/css/structure.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+     <ul class="nav navbar-nav">
+	<a class= "navbar-brand" href="/about"> VUMC </a>
+        <li><a href="/user">User</a></li>
+        <li><a href="/Location">Locations</a></li>
+				<li><a href="#">Observations</a></li>
+				<li><a href="#">Settings</a></li>
+				<li><a href="/logout">Log Out</a></li>
+	
+     </ul>
+     <p class="navbar-text navbar-right">Signed in as <%= user.user.username %></p>
+  </div>
+</nav>
+
+<form class="box login">
+	<fieldset class="boxBody">
+
+		<label>Welcome to VUMC Hand Washing.
+		Please select an observation site in the "Locations"
+		tab to begin recording observations.
+		</label>
+		
+</fieldset>
+	
+</form>
+
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+
+</body>
+</html>
+
+
+
