@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<title>VUMC Hand Washing</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/structure.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="../assets/css/bootstrap.css" rel="stylesheet">
+				<script src="jquery.js"></script>
+</head>
+<body>
+
+				<nav class="navbar navbar-inverse navbar-fixed-top">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">VUMC Hand Washing</a>
+						</div>
+				</nav>
+				<form data-parsley-validate action="/signup" method="post" class="box login">
+					<fieldset class="boxBody">
+					<% if (message.length > 0) { %>
+						<div class="alert alert-message"><%= message %></div>
+					<% } %>
+					<label>Userame:</label>
+						<input type="text" tabindex="1" placeholder="Enter Name" name="name" required>
+						<label>Email:</label>
+						<input type="email" tabindex="1" placeholder="Enter Email" name="email" required>
+						<label>Password:</label>
+						<input type="password" tabindex="2" placeholder="Enter Password" name="password" required>
+					</fieldset>
+					<footer>
+					<input TYPE="button"class="btnLogin" value="Back"  onClick="parent.location='/login'">
+						<input type="submit" class="btnLogin" value="SignUp" tabindex="1">
+					</footer>
+				</form>
+
+				
+</body>
+</html>
