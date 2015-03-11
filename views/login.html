@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title>VUMC Login Form</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/structure.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+      .form-email input[type="email"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">VUMC Hand Washing</a>
+        </div>
+    </nav>
+	
+<form action="/login" method="post" class="box login">
+	<fieldset class="boxBody">
+	<% if (message.length > 0) { %>
+		<div class="alert alert-message"><%= message %></div>
+	<% } %>	
+	  <label>Email:</label>
+	  <input type="email" tabindex="1" class="form-email" placeholder="Enter Email" name="email" required>
+  	<label>Password:</label>
+	  <input type="password" tabindex="2" class="form-password" placeholder="Enter Password" name="password" required>
+				
+	</fieldset>
+	<footer>
+	<input TYPE="button"class="btnLogin" value="SignUp"  onClick="parent.location='/signup'">
+	  <input type="submit" class="btnLogin" value="Login" tabindex="4">
+	
+	</footer>
+
+</form>
+</body>
+</html>
