@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>VUMC Hand Washing</title>
+
+<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/css/structure.css" />
+<link rel="stylesheet" type="text/css" href="/css/toggle-switch.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+  
+<script src="../public/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/about">VUMC</a>
+    </div>
+    <div id="header-navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/user">Profile</a></li>
+        <li><a href="/location">Locations</a></li>
+        <li class="active"><a href="/observation">Observations<span class="sr-only">(current)</span></a></li>
+        <li><a href="/logout">Log Out</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/user">Signed in as <%= user.user.name %></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<form action="/observation" class="box observation">
+
+
+  <label></label>
+  <div class="switch-toggle well col-sm-9">
+    <input id="Entry" name="entry" type="radio" checked>
+    <label for="Entry" onclick="">Upon Entry</label>
+  
+    <input id="Exit" name="entry" type="radio">
+    <label for="Exit" onclick="">Upon Exit</label>
+  
+    <a class="btn btn-primary"></a>
+  </div>
+  <br><br><hr>
+    
+  
+
+  <label>Was Hand Hygiene Performed?</label>
+  <div class="switch-toggle col-sm-6 well">
+    <input id="Washed" name="Hands" type="radio" tabindex="1">
+    <label for="Washed" onclick="">Yes</label>
+  
+    <input id="no Washed" name="Hands" type="radio" checked>
+    <label for="no Washed" onclick="">No</label>
+  
+    <a class="btn btn-primary"></a>
+  </div>
+  <br><br><br>
+  
+  <label>Contact Precautions:</label>
+  <div class="switch-toggle col-sm-6 well">
+    <input id="Contact" name="contact" type="radio">
+    <label for="Contact" onclick="">Yes</label>
+  
+    <input id="no Contact" name="contact" type="radio" checked>
+    <label for="no Contact" onclick="">No</label>
+  
+    <a class="btn btn-primary"></a>
+  </div>
+  <br><br><br>
+  
+  <label>Gloves Worn:</label>
+  <div class="switch-toggle col-sm-6 well">
+    <input id="Gloves" name="gloves" type="radio">
+    <label for="Gloves" onclick="">Yes</label>
+  
+    <input id="no Gloves" name="gloves" type="radio" checked>
+    <label for="no Gloves" onclick="">No</label>
+  
+    <a class="btn btn-primary"></a>
+  </div>
+  <br><br><br>
+  
+  <label>Gown Worn:</label>
+  <div class="switch-toggle col-sm-6 well">
+    <input id="Gown" name="gown" type="radio">
+    <label for="Gown" onclick="">Yes</label>
+  
+    <input id="no Gown" name="gown" type="radio" checked>
+    <label for="no Gown" onclick="">No</label>
+  
+    <a class="btn btn-primary"></a>
+  </div>
+  <br><br><br><br>
+
+	<footer>
+	  <input type="submit" class="btnLogin" value="Submit">
+	</footer>
+
+</form>
+
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+
+</body>
+</html>

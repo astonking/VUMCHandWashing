@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>VUMC Hand Washing</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/structure.css">
@@ -32,7 +34,9 @@
 						<label>Email:</label>
 						<input type="email" tabindex="1" placeholder="Enter Email" name="email" required>
 						<label>Password:</label>
-						<input type="password" tabindex="2" placeholder="Enter Password" name="password" required>
+						<input type="password" tabindex="2" placeholder="Enter Password" name="password" id="password" required>
+              <label>Confirm Password:</label>
+						<input type="password" tabindex="2" placeholder="Enter Password" id="password_confirm" oninput="check(this)" required>
 					</fieldset>
 					<footer>
 					<input TYPE="button"class="btnLogin" value="Back"  onClick="parent.location='/login'">
@@ -40,6 +44,15 @@
 					</footer>
 				</form>
 
-				
+				<script language='javascript' type='text/javascript'>
+          function check(input) {
+            if (input.value != document.getElementById('password').value) {
+              input.setCustomValidity('Passwords Must Match');
+            } else {
+              // input is valid -- reset the error message
+              input.setCustomValidity('');
+            }
+          }
+        </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 var User       = require('../app/models/user');
 var Friend       = require('../app/models/friend');
+var Observation   = require('../app/models/observation')
 async = require("async");
 var path = require('path'),
     fs = require('fs');
@@ -16,9 +17,27 @@ module.exports = function(app, passport,server) {
 		});
 	});
 
-	app.get('/Location', auth, function(request, response) {
-		response.render('Location.html');
-			user : request.user
+	app.get('/location', auth, function(request, response) {
+		response.render('location.html', {
+        user : request.user
+    });
+			
+	});
+  app.get('/location2', auth, function(request, response) {
+		response.render('location2.html', {
+        user : request.user
+    });
+	});		
+  app.get('/location3', auth, function(request, response) {
+		response.render('location3.html', {
+        user : request.user
+    });  
+	});
+  app.get('/observation', auth, function(request, response) {
+		response.render('observation.html', {
+        user : request.user
+    });
+			
 	});
 	app.get('/image.png', function (req, res) {
     		res.sendfile(path.resolve('./uploads/image_'+req.user._id));
@@ -60,6 +79,7 @@ module.exports = function(app, passport,server) {
 			failureRedirect : '/signup', 
 			failureFlash : true 
 		}));
+    
 		app.get('/edit', function(request, response) {
 			response.render('edit.html', { message: request.flash('updateerror') });
 		});
@@ -75,6 +95,21 @@ module.exports = function(app, passport,server) {
                          });
   		});
 		
+    app.get('/observation', function(request, response) {
+			response.render('observation.html', { message: request.flash('observationerror') });
+		});
+    /*
+    app.post('/observation',  function (req, res){
+				
+ 			 User.findOne({ 'user.email' :  req.body.email }, function(err, user) {
+                		if (err){ return done(err);}
+                		if (user)
+                    			user.updateUser(req, res)
+
+                         });
+  		});
+    */
+    
 		app.get('/profile', auth, function(request, response) {
 			var query = Friend.find({'friend.mainfriendid': request.user._id}, { 'friend.anotherfriendid': 1 });
 			query.exec(function(err, friends) {

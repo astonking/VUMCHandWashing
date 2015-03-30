@@ -2,11 +2,12 @@
 <form action="/edit" method="post" enctype="multipart/form-data" class="box login">
 	<label>Name</label>
 	  <input type="text" tabindex="1" placeholder="Enter Your Name" name="name" value ="<%= user.user.name %>" required>
-	<label>Email</label>
+    <label>Email</label>
 	  <input type="text" tabindex="1" placeholder="Enter Your Email Address" name="email" value ="<%= user.user.email %>" readonly>
 	  <label>Pager</label>
 	  <input type="text" tabindex="1" placeholder="Enter Your Pager" name="pager" value ="<%= user.user.pager %>" required>
-
+    <label>Max Entries Per Week</label>
+	  <input type="number" tabindex="1" placeholder="Enter Max Entries" name="maxEntries" value ="<%= user.user.maxEntries %>" required>
 	<footer>
 	  <input type="submit" class="btnLogin" value="Update" tabindex="1">
 	</footer>

@@ -32,7 +32,7 @@ body {
 }
 
 .box.login {
-	width: 380px;
+	width: 360px;
 	margin: 10% auto 0;
 }
 
@@ -57,6 +57,20 @@ body {
 	left: 20%;
 	top: 50%;
 	margin: -130px 0 0 -166px;
+}
+
+.box.observation {
+	width: 380px;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 0 0 4px 4px;
+}
+
+.box.user {
+	width: 540px;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 0 0 4px 4px;
 }
 
 .box.profile,.box.editProfile,.box.content,.box.reminder {
