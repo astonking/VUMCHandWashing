@@ -24,6 +24,8 @@
 							<a class="navbar-brand" href="#">VUMC Hand Washing</a>
 						</div>
 				</nav>
+        
+        
 				<form data-parsley-validate action="/signup" method="post" class="box login">
 					<fieldset class="boxBody">
 					<% if (message.length > 0) { %>
@@ -31,18 +33,19 @@
 					<% } %>
 					<label>Name:</label>
 						<input type="text" tabindex="1" placeholder="Enter Name" name="name" required>
-						<label>Email:</label>
+              <label>Email:</label>
 						<input type="email" tabindex="1" placeholder="Enter Email" name="email" required>
-						<label>Password:</label>
+              <label>Password:</label>
 						<input type="password" tabindex="2" placeholder="Enter Password" name="password" id="password" required>
               <label>Confirm Password:</label>
 						<input type="password" tabindex="2" placeholder="Enter Password" id="password_confirm" oninput="check(this)" required>
 					</fieldset>
 					<footer>
-					<input TYPE="button"class="btnLogin" value="Back"  onClick="parent.location='/login'">
-						<input type="submit" class="btnLogin" value="SignUp" tabindex="1">
+              <input type="button" class="btnLogin" value="Back"  onClick="parent.location='/login'">
+              <input type="submit" class="btnLogin" value="Sign Up" tabindex="1">
 					</footer>
 				</form>
+        
 
 				<script language='javascript' type='text/javascript'>
           function check(input) {

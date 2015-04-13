@@ -1,44 +1,46 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
-var userSchema = mongoose.Schema({
-  user             : {
+
+var UserSchema = mongoose.Schema({
     email        : String,
     password     : String,
     name	     	 : String,
     pager        : { type: String, default: "No Pager Entered"},
-    entries      : { type: Number, default: 0},
     maxEntries   : { type: Number, default: 10},
     lookback     : { type: String, default: "1 Week"},
-    lastloc      : [locationSchema]
-  }
+    curLocation    : {type: mongoose.Schema.Types.ObjectId, ref: 'Location'},
+    allowedLocations    : [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}],
+    observations : [{type: mongoose.Schema.Types.ObjectId, ref: 'Observation'}]
 });
 
-var locationSchema = mongoose.Schema({
-    Site        : String,
-    Wing        : String,
-    Floor       : String
-});
 
-userSchema.methods.generateHash = function(password) {
+UserSchema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-userSchema.methods.verifyPassword = function(password) {
-    return bcrypt.compareSync(password, this.user.password);
+UserSchema.methods.verifyPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
 };
 
-userSchema.methods.updateUser = function(request, response){
+UserSchema.methods.updateUser = function(request, response){
 
-	this.user.name = request.body.name;
-	this.user.pager = request.body.pager;
+	this.name = request.body.name;
+	this.pager = request.body.pager;
   
-	this.user.maxEntries = request.body.maxEntries;
-	this.user.save();
+	this.maxEntries = request.body.maxEntries;
+	this.save();
 	response.redirect('/user');
 };
+/*
+UserSchema.methods.newObservation = function(request, response){
 
-
-
-
-module.exports = mongoose.model('User', userSchema);
+	this.observations. = request.body.name;
+	this.pager = request.body.pager;
+  
+	this.maxEntries = request.body.maxEntries;
+	this.save();
+	response.redirect('/user');
+};
+*/
+module.exports=  mongoose.model('User', UserSchema);

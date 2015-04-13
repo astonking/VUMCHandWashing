@@ -1,6 +1,6 @@
 var User       = require('../app/models/user');
 var Friend       = require('../app/models/friend');
-var Observation   = require('../app/models/observation')
+var Observation   = require('../app/models/observation');
 async = require("async");
 var path = require('path'),
     fs = require('fs');
@@ -13,29 +13,31 @@ module.exports = function(app, passport,server) {
 	});
 	app.get('/user', auth, function(request, response) {
 		response.render('user.html', {
-			user : request.user
+			user : request
 		});
 	});
 
 	app.get('/location', auth, function(request, response) {
 		response.render('location.html', {
-        user : request.user
+        user : request
     });
 			
 	});
-  app.get('/location2', auth, function(request, response) {
+  
+app.get('/location2', auth, function(request, response) {
 		response.render('location2.html', {
-        user : request.user
+        user : request
     });
 	});		
   app.get('/location3', auth, function(request, response) {
 		response.render('location3.html', {
-        user : request.user
+        user : request
     });  
 	});
+  
   app.get('/observation', auth, function(request, response) {
 		response.render('observation.html', {
-        user : request.user
+        user : request
     });
 			
 	});
@@ -46,12 +48,12 @@ module.exports = function(app, passport,server) {
 
 	app.get('/edit', auth, function(request, response) {
 		response.render('edit.html', {
-			user : request.user
+			user : request
 		});
 	});
 	app.get('/about', auth, function(request, response) {
 		response.render('about.html', {
-			user : request.user
+			user : request
 		});
 	});
 	app.get('/logout', function(request, response) {
@@ -73,7 +75,6 @@ module.exports = function(app, passport,server) {
 			response.render('signup.html', { message: request.flash('signuperror') });
 		});
 
-
 		app.post('/signup', passport.authenticate('signup', {
 			successRedirect : '/about',
 			failureRedirect : '/signup', 
@@ -87,7 +88,7 @@ module.exports = function(app, passport,server) {
 
 		app.post('/edit',  function (req, res){
 				
- 			 User.findOne({ 'user.email' :  req.body.email }, function(err, user) {
+ 			 User.findOne({ email :  req.body.email }, function(err, user) {
                 		if (err){ return done(err);}
                 		if (user)
                     			user.updateUser(req, res)
@@ -111,7 +112,7 @@ module.exports = function(app, passport,server) {
     */
     
 		app.get('/profile', auth, function(request, response) {
-			var query = Friend.find({'friend.mainfriendid': request.user._id}, { 'friend.anotherfriendid': 1 });
+			var query = Friend.find({'friend.mainfriendid': request._id}, { 'friend.anotherfriendid': 1 });
 			query.exec(function(err, friends) {
 
       		if (!err) {
@@ -130,7 +131,7 @@ module.exports = function(app, passport,server) {
   			},
   			function(err){
          			response.render('profile.html', {
-					user : request.user,
+					user : request,
 					friends: frdDetails
 				});
   			}

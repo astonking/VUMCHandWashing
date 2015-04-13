@@ -9,9 +9,8 @@
 <link rel="stylesheet" type="text/css" href="/css/structure.css" />
 <link rel="stylesheet" type="text/css" href="/css/toggle-switch.css" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link href="../assets/css/bootstrap.css" rel="stylesheet">
   
-<script src="../public/js/bootstrap.min.js"></script>
+
 
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
@@ -48,6 +47,7 @@
 <form action="/observation" class="box observation">
 
 
+<div class="row" style="margin:10px">
   <label></label>
   <div class="switch-toggle well col-sm-9">
     <input id="Entry" name="entry" type="radio" checked>
@@ -58,10 +58,11 @@
   
     <a class="btn btn-primary"></a>
   </div>
-  <br><br><hr>
-    
   
-
+</div>
+<hr>    
+  
+<div class="row" style="margin:10px">
   <label>Was Hand Hygiene Performed?</label>
   <div class="switch-toggle col-sm-6 well">
     <input id="Washed" name="Hands" type="radio" tabindex="1">
@@ -72,8 +73,9 @@
   
     <a class="btn btn-primary"></a>
   </div>
-  <br><br><br>
+</div>
   
+<div class="row" style="margin:10px">
   <label>Contact Precautions:</label>
   <div class="switch-toggle col-sm-6 well">
     <input id="Contact" name="contact" type="radio">
@@ -84,8 +86,9 @@
   
     <a class="btn btn-primary"></a>
   </div>
-  <br><br><br>
+</div>
   
+<div class="row" style="margin:10px">
   <label>Gloves Worn:</label>
   <div class="switch-toggle col-sm-6 well">
     <input id="Gloves" name="gloves" type="radio">
@@ -96,8 +99,9 @@
   
     <a class="btn btn-primary"></a>
   </div>
-  <br><br><br>
-  
+</div>
+
+<div class="row" style="margin:10px">
   <label>Gown Worn:</label>
   <div class="switch-toggle col-sm-6 well">
     <input id="Gown" name="gown" type="radio">
@@ -108,7 +112,7 @@
   
     <a class="btn btn-primary"></a>
   </div>
-  <br><br><br><br>
+</div>
 
 	<footer>
 	  <input type="submit" class="btnLogin" value="Submit">
@@ -116,11 +120,12 @@
 
 </form>
 
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/menu.js"></script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 </body>
 </html>

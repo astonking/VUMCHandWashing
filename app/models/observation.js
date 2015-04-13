@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
-var bcrypt   = require('bcrypt-nodejs');
 
-var observationSchema = mongoose.Schema({
-    entry :  Boolean,
+var ObservationSchema = mongoose.Schema({
+    entry              : Boolean,
     handHygiene        : Boolean,
     contactPrecautions : Boolean,
     gown               : Boolean,
@@ -10,16 +9,21 @@ var observationSchema = mongoose.Schema({
     
     date : {type: Date, default: Date.now},
     
-    location : [locationSchema]
-    
-    
+    location : {type: mongoose.Schema.Types.ObjectId, ref: 'location'}
 });
 
-var locationSchema = mongoose.Schema({
-    Site        : String,
-    Wing        : String,
-    Floor       : String
-});
+var Observation = mongoose.model('Observation', ObservationSchema);
+/*
+ObservationSchema.methods.observe = function(request, response){
 
-
-module.exports = mongoose.model('Observation', observationSchema);
+	this.name = request.body.name;
+	this.pager = request.body.pager;
+  
+	this.maxEntries = request.body.maxEntries;
+	this.save();
+	response.redirect('/user');
+};
+*/
+module.exports = {
+  Observation: Observation
+}

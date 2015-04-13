@@ -14,10 +14,6 @@
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/menu.js"></script>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 </head>
 
@@ -42,7 +38,7 @@
         <li><a href="/logout">Log Out</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/user">Signed in as <%= user.user.name %></a></li>
+        <li><a href="/user">Signed in as <%= user.name %></a></li>
       </ul>
     </div>
       
@@ -53,29 +49,20 @@
 <div class="container">
   
   <h2 title="Please select your current site:">Site:</h2>
-  
-  <div class="row">
-    <div class="list-group col-sm-3">
-      <a class="list-group-item" href="/location2"><span class="badge">3</span> Site 1</a>
-      <a class="list-group-item"><span class="badge">1</span> Site 2</a> 
-      <a class="list-group-item"><span class="badge">4</span> Site 3</a> 
-    </div>
-    
-    <div class="list-group col-sm-3">
-      <a class="disabled list-group-item"> Wing 1</a>
-      <a class="disabled list-group-item"> Wing 2</a> 
-    </div>
+  <div class="list-group">
+    <a class="list-group-item" onclick="">Site 1</a>
+    <a class="list-group-item" onclick="">Site 2</a> 
+    <a class="list-group-item" onclick="">Site 3</a> 
   </div>
-    
+  
 </div>
 
-<div class="container">
-  <ul class="pagination">
-    <li class="active"><a>1</a></li>
-    <li class="disabled"><a>2</a></li>
-    <li class="disabled"><a>3</a></li>
-  </ul>
-</div>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 </body>
 </html>

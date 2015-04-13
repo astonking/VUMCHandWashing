@@ -41,9 +41,9 @@ module.exports = function(passport) {
         usernameField : 'email',
         passReqToCallback : true 
     },
-    function(req, email, password, done) {
+    function(req, mEmail, password, done) {
        process.nextTick(function() {
-            User.findOne({ 'user.email' :  email }, function(err, user) {
+            User.findOne({ email : mEmail }, function(err, user) {
                 if (err){ return done(err);}
                 if (!user)
                     return done(null, false, req.flash('error', 'User does not exist.'));
@@ -61,22 +61,21 @@ module.exports = function(passport) {
         usernameField : 'email',
         passReqToCallback : true 
     },
-    function(req, email, password, done) {
+    function(req, mEmail, password, done) {
 
         process.nextTick(function() {
        
             if (!req.user) {
-                User.findOne({ 'user.email' :  email }, function(err, user) {
+                User.findOne({ email : mEmail }, function(err, user) {
             	    if (err){ return done(err);}
                     if (user) {
                         return done(null, false, req.flash('signuperror', 'User already exists'));
                     } else {
-                        var newUser            = new User();
-			newUser.user.username    = req.body.username;
-                        newUser.user.email    = email;
-                        newUser.user.password = newUser.generateHash(password);
-			newUser.user.name	= ''
-			newUser.user.address	= ''
+                        var newUser = new User();
+                        newUser.email = mEmail;
+                        newUser.password = newUser.generateHash(password);
+                        newUser.name	= req.body.name;
+                        
                         newUser.save(function(err) {
                             if (err)
                                 throw err;
